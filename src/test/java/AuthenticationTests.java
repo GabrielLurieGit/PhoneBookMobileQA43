@@ -28,7 +28,7 @@ public class AuthenticationTests extends AppiumConfig {
     }
 
     @Test
-    public void registrationPositiveTest(){
+    public void registrationPositiveTest(){                         //блок try catch на случай падения апликации, обнаружил что с пустым полем крашит (обсудил бы это на уроке)
         try{
             SplashScreen splashScreen = new SplashScreen(driver);
             AuthenticationScreen authenticationScreen = new AuthenticationScreen(driver);
