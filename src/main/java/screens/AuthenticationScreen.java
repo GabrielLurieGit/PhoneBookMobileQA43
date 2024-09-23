@@ -3,9 +3,12 @@ package screens;
 import interfaces.TestHelper;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import models.RegistrationResult;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.FindBy;
 
 import javax.swing.*;
+import java.util.List;
 
 public class AuthenticationScreen extends BaseScreen implements TestHelper {
 
@@ -27,6 +30,16 @@ public class AuthenticationScreen extends BaseScreen implements TestHelper {
     MobileElement errorOkButton;
 
 
+    private String errorMsg;
+
+    public String getErrorMsg() {
+        return errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
+
     public AuthenticationScreen(AppiumDriver<MobileElement> driver) {
         super(driver);
     }
@@ -43,30 +56,74 @@ public class AuthenticationScreen extends BaseScreen implements TestHelper {
         return this;
     }
 
-    public <T extends BaseScreen> T clickLoginButton() {
-        loginButton.click();
-        if (!isElementPresent(errorText, INVALID_LOGIN_MESSAGE)) {
-            return (T) new ContactListScreen(driver);
-        } else {
+//    public <T extends BaseScreen> T clickLoginButton() {
+//        loginButton.click();
+//        if (!isElementPresent(errorText, INVALID_LOGIN_MESSAGE)) {
+//            return (T) new ContactListScreen(driver);
+//        } else {
+//            errorOkButton.click();
+//            return (T) this;
+//        }
+//    }
+
+
+    public <T extends BaseScreen> T clickByRegistrationButton() {
+        registrationButton.click();
+        List<MobileElement> list = driver.findElements(By.id("android:id/alertTitle"));
+        if (list.size() > 0) {
+            setErrorMsg(errorText.getText());
             errorOkButton.click();
-            return (T) this;
+            return (T) new AuthenticationScreen(driver);
+        }
+        return (T) new ContactListScreen(driver);
+    }
+
+    public <T extends BaseScreen>T clickByLoginButton(){
+        loginButton.click();
+        List<MobileElement> list = driver.findElements(By.id("android:id/alertTitle"));
+        if(list.size()>0){
+            return (T)new AuthenticationScreen(driver);
+        }
+        else {
+            return (T)new ContactListScreen(driver);
         }
     }
 
-    public <T extends BaseScreen> T clickRegistrationButton() {
-        registrationButton.click();
-        if (isElementPresent(errorText, WRONG_EMAIL_ERROR_MESSAGE)) {
-            errorOkButton.click();
-            return (T) this;
-        } else if (isElementPresent(errorText, WRONG_PASSWORD_ERROR_MESSAGE)) {
-            errorOkButton.click();
-            return (T) this;
-        } else if (isElementPresent(errorText,USER_ALREADY_EXISTS)) {
-            errorOkButton.click();
-            return (T) this;
-        } else {
-            return (T) new ContactListScreen(driver);
-        }
 
+    public RegistrationResult clickByRegistrationButtonUsingRegistrationResult() {
+        registrationButton.click();
+        String msg = null;
+        List<MobileElement> errorTitle = driver.findElements(By.id("android:id/alertTitle"));
+        if (errorTitle.size() > 0) {
+            List<MobileElement> errorMessage = driver.findElements(By.id("android:id/message"));
+            if (errorMessage.size() > 0) {
+                msg = errorMessage.get(0).getText();
+            } else {
+                msg = errorTitle.get(0).getText();
+            }
+            return new RegistrationResult(false, msg, null);
+        } else {
+            return new RegistrationResult(true, null, new ContactListScreen(driver));
+        }
     }
 }
+
+
+
+//    public <T extends BaseScreen> T clickRegistrationButton() {
+//        registrationButton.click();
+//        if (isElementPresent(errorText, WRONG_EMAIL_ERROR_MESSAGE)) {
+//            errorOkButton.click();
+//            return (T) this;
+//        } else if (isElementPresent(errorText, WRONG_PASSWORD_ERROR_MESSAGE)) {
+//            errorOkButton.click();
+//            return (T) this;
+//        } else if (isElementPresent(errorText,USER_ALREADY_EXISTS)) {
+//            errorOkButton.click();
+//            return (T) this;
+//        } else {
+//            return (T) new ContactListScreen(driver);
+//        }
+//
+//    }
+
