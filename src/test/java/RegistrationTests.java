@@ -15,14 +15,26 @@ public class RegistrationTests extends AppiumConfig {
 
 
 
+//    @Test
+//    public void registrationPositiveTest() {
+//      ContactListScreen contactListScreen =  new SplashScreen(driver).switchAuthenticationScreen()
+//                .fillEmailField(EmailGenerator.generateEmail(5,5,3))
+//                .fillPasswordField(PasswordStringGenerator.generateRandomPassword())
+//                .clickByRegistrationButton();
+//      Assert.assertTrue(contactListScreen.isContactListPresent());
+//    }
+
     @Test
     public void registrationPositiveTest() {
-      ContactListScreen contactListScreen =  new SplashScreen(driver).switchAuthenticationScreen()
-                .fillEmailField(EmailGenerator.generateEmail(5,5,3))
+        AuthenticationScreen authenticationScreen = new AuthenticationScreen(driver);
+               ContactListScreen contactListScreen = authenticationScreen.fillEmailField(EmailGenerator.generateEmail(5,5,3))
                 .fillPasswordField(PasswordStringGenerator.generateRandomPassword())
                 .clickByRegistrationButton();
-      Assert.assertTrue(contactListScreen.isContactListPresent());
+        Assert.assertTrue(contactListScreen.isContactListPresent());
     }
+
+
+
 @Test
     public void wrongEmailRegistration(){
         try {
@@ -48,11 +60,10 @@ public class RegistrationTests extends AppiumConfig {
      }else {
          ContactListScreen contactListScreen = result.getContactListScreen();
      }
-
     }
 
 
-    @Test
+    @Test()
     public void regWOPasswordUsingAppState(){
         AuthenticationScreen authenticationScreen=new AuthenticationScreen(driver);
        ApplicationState appState = driver.queryAppState("com.sheygam.contactapp");
@@ -74,10 +85,6 @@ public class RegistrationTests extends AppiumConfig {
         }
         Assert.assertTrue(result.getErrorMessage().contains("Contact App has stopped"));
     }
-
-
-
-
 }
 
 

@@ -3,12 +3,19 @@ package screens;
 import interfaces.TestHelper;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import models.LoginResult;
 import models.RegistrationResult;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import javax.swing.*;
+import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class AuthenticationScreen extends BaseScreen implements TestHelper {
 
@@ -69,7 +76,7 @@ public class AuthenticationScreen extends BaseScreen implements TestHelper {
 
     public <T extends BaseScreen> T clickByRegistrationButton() {
         registrationButton.click();
-        List<MobileElement> list = driver.findElements(By.id("android:id/alertTitle"));
+      List<MobileElement> list = driver.findElements(By.id("android:id/alertTitle"));
         if (list.size() > 0) {
             setErrorMsg(errorText.getText());
             errorOkButton.click();
@@ -106,6 +113,30 @@ public class AuthenticationScreen extends BaseScreen implements TestHelper {
             return new RegistrationResult(true, null, new ContactListScreen(driver));
         }
     }
+
+    public LoginResult clickByLoginButtonUsingLoginResult() {
+        loginButton.click();
+        String msg = null;
+        List<MobileElement> errorTitle = driver.findElements(By.id("android:id/alertTitle"));
+        if (errorTitle.size() > 0) {
+            List<MobileElement> errorMessage = driver.findElements(By.id("android:id/message"));
+            if (errorMessage.size() > 0) {
+                msg = errorMessage.get(0).getText();
+            } else {
+                msg = errorTitle.get(0).getText();
+            }
+            return new LoginResult(false, msg, null);
+        } else {
+            return new LoginResult(true, null, new ContactListScreen(driver));
+        }
+    }
+
+
+    public boolean isErrorMessagePresent(){
+        return isElementPresent(errorText,INVALID_LOGIN_MESSAGE);
+    }
+
+
 }
 
 

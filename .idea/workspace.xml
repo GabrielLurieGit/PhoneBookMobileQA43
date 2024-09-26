@@ -4,25 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2a8ff69-0da4-4f8c-981f-f8b6139db935" name="Changes" comment="try catch block commentary">
-      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/AddressGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/EmailGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/NameAndLastNameGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/PasswordStringGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/PhoneNumberGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/PropertiesReaderXML.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/PropertiesWriterXML.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/RegistrationResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/screenactions/ScreenUntil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/LoginTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/RegistrationTests.java" afterDir="false" />
+    <list default="true" id="b2a8ff69-0da4-4f8c-981f-f8b6139db935" name="Changes" comment="mobile phonebook new methods">
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/LoginResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interfaces/TestHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaces/TestHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/AuthenticationScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/AuthenticationScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/ContactListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/ContactListScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/SplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/SplashScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/AuthenticationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/BaseScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/BaseScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/RegistrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RegistrationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +29,27 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PhoneBookMobileQA43" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PhoneBookMobileQA43" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="PhoneBookMobileQA43" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -52,6 +61,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2mIKk592ArqU9Xpo8sJeG2VLdrj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -66,7 +82,13 @@
     "Gradle.AuthenticationTests.regWOPasswordUsingAppState.executor": "Run",
     "Gradle.AuthenticationTests.registrationPositiveTest.executor": "Run",
     "Gradle.AuthenticationTests.wrongEmailRegistration.executor": "Run",
+    "Gradle.LoginTests.invalidLogin2.executor": "Run",
+    "Gradle.LoginTests.loginNegativeInvalidEmail.executor": "Run",
+    "Gradle.LoginTests.loginNegativeWOPassword.executor": "Run",
     "Gradle.LoginTests.loginPositive.executor": "Run",
+    "Gradle.RegistrationTests.regWOPassword.executor": "Run",
+    "Gradle.RegistrationTests.regWOPasswordUsingAppState.executor": "Run",
+    "Gradle.RegistrationTests.registrationPositiveTest.executor": "Run",
     "Gradle.SplashScreenTest.firstLaunch.executor": "Run",
     "Gradle.SplashScreenTest.positiveLogin.executor": "Run",
     "Repository.Attach.Annotations": "false",
@@ -74,11 +96,12 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/PROJECTS/QA43/PhoneBookMobileQA43/src/main/resources",
-    "project.structure.last.edited": "Project",
+    "last_opened_file_path": "C:/PROJECTS/QA43/QA_43_Trello",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
@@ -88,8 +111,8 @@
       <recent name="C:\PROJECTS\QA43\PhoneBookMobileQA43\src\main\java\helpers" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.LoginTests.loginPositive">
-    <configuration name="AuthenticationTests.regWOPassword" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.LoginTests.invalidLogin2">
+    <configuration name="LoginTests.invalidLogin2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -102,7 +125,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;AuthenticationTests.regWOPassword&quot;" />
+            <option value="&quot;LoginTests.invalidLogin2&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -113,7 +136,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AuthenticationTests.regWOPasswordUsingAppState" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LoginTests.loginNegativeInvalidEmail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -126,7 +149,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;AuthenticationTests.regWOPasswordUsingAppState&quot;" />
+            <option value="&quot;LoginTests.loginNegativeInvalidEmail&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -137,7 +160,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AuthenticationTests.registrationPositiveTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LoginTests.loginNegativeWOPassword" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -150,7 +173,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;AuthenticationTests.registrationPositiveTest&quot;" />
+            <option value="&quot;LoginTests.loginNegativeWOPassword&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -161,7 +184,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AuthenticationTests.wrongEmailRegistration" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RegistrationTests.regWOPasswordUsingAppState" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -174,7 +197,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;AuthenticationTests.wrongEmailRegistration&quot;" />
+            <option value="&quot;RegistrationTests.regWOPasswordUsingAppState&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -185,7 +208,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LoginTests.loginPositive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RegistrationTests.registrationPositiveTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -198,7 +221,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;LoginTests.loginPositive&quot;" />
+            <option value="&quot;RegistrationTests.registrationPositiveTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -208,14 +231,27 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>true</RunAsTest>
       <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="PhoneBookMobileQA43" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="PhoneBookMobileQA43" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LoginTests.loginPositive" />
-        <item itemvalue="Gradle.AuthenticationTests.regWOPasswordUsingAppState" />
-        <item itemvalue="Gradle.AuthenticationTests.regWOPassword" />
-        <item itemvalue="Gradle.AuthenticationTests.wrongEmailRegistration" />
-        <item itemvalue="Gradle.AuthenticationTests.registrationPositiveTest" />
+        <item itemvalue="Gradle.LoginTests.invalidLogin2" />
+        <item itemvalue="Gradle.RegistrationTests.regWOPasswordUsingAppState" />
+        <item itemvalue="Gradle.LoginTests.loginNegativeInvalidEmail" />
+        <item itemvalue="Gradle.LoginTests.loginNegativeWOPassword" />
+        <item itemvalue="Gradle.RegistrationTests.registrationPositiveTest" />
       </list>
     </recent_temporary>
   </component>
@@ -243,11 +279,20 @@
       <option name="project" value="LOCAL" />
       <updated>1727046967289</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="mobile phonebook new methods">
+      <option name="closed" value="true" />
+      <created>1727125221282</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727125221282</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="try catch block commentary" />
-    <option name="LAST_COMMIT_MESSAGE" value="try catch block commentary" />
+    <MESSAGE value="mobile phonebook new methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="mobile phonebook new methods" />
   </component>
 </project>
