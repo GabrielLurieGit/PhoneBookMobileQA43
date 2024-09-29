@@ -54,7 +54,7 @@ public class RegistrationTests extends AppiumConfig {
         AuthenticationScreen authenticationScreen = new AuthenticationScreen(driver);
      RegistrationResult result = authenticationScreen.fillEmailField(EmailGenerator.generateEmail(5,5,3))
                 .fillPasswordField("123")
-                .clickByRegistrationButtonUsingRegistrationResult();
+             .clickRegistrationButtonUsingRegistrationResult();
      if(!result.isSuccess()){
          result.getErrorMessage().contains("least 8");
      }else {
@@ -71,7 +71,7 @@ public class RegistrationTests extends AppiumConfig {
         RegistrationResult result = authenticationScreen
                 .fillEmailField(EmailGenerator.generateEmail(5,5,3))
                 .fillPasswordField("")
-                .clickByRegistrationButtonUsingRegistrationResult();
+                .clickRegistrationButtonUsingRegistrationResult();
         System.out.println("RESULT MESSAGE: "+ result.getErrorMessage());
         ScreenUntil screenUntil = new ScreenUntil(driver);
         screenUntil.takeStreenShot("RegistrationIssue");

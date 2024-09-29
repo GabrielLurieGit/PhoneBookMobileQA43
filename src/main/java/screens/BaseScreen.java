@@ -31,7 +31,6 @@ public class BaseScreen {
             return true;
         }catch (TimeoutException e){
             return false;
-
         }
     }
 
@@ -41,7 +40,6 @@ public class BaseScreen {
             return true;
         }catch (TimeoutException e){
             return false;
-
         }
     }
 

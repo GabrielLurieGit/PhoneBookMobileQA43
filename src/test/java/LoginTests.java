@@ -22,31 +22,40 @@ public class LoginTests extends AppiumConfig implements TestHelper {
 
     @Test
     public void loginNegativeWOPassword(){
-      LoginResult loginResult = new AuthenticationScreen(driver)
+      RegistrationResult registrationResult = new AuthenticationScreen(driver)
                 .fillEmailField(PropertiesReaderXML.getProperties("myuser",XML_DATA_FILE))
                 .fillPasswordField("")
-              .clickByLoginButtonUsingLoginResult();
-      if(!loginResult.isSuccess()){
-          loginResult.getErrorMessage().equals(INVALID_LOGIN_MESSAGE);
+              .clickLoginButtonUsingRegistrationResult();
+      if(!registrationResult.isSuccess()){
+          registrationResult.getErrorMessage().equals(INVALID_LOGIN_MESSAGE);
       }else {
-          ContactListScreen contactListScreen = loginResult.getContactListScreen();
+          ContactListScreen contactListScreen = registrationResult.getContactListScreen();
       }
+        Assert.assertTrue(registrationResult.getErrorMessage().equals(INVALID_LOGIN_MESSAGE));
     }
+
+
+//    @Test
+//    public void loginNegativeTry(){
+//       AuthenticationScreen authenticationScreen = new AuthenticationScreen(driver)
+//                .fillEmailField(PropertiesReaderXML.getProperties("myuser",XML_DATA_FILE))
+//                .fillPasswordField("")
+//                 .clickByLoginButton();
+//       Assert.assertTrue(authenticationScreen.isErrorMessagePresent());
+//    }
 
     @Test
     public void loginNegativeInvalidEmail(){
-        LoginResult loginResult = new AuthenticationScreen(driver)
+       RegistrationResult registrationResult =  new AuthenticationScreen(driver)
                 .fillEmailField(PropertiesReaderXML.getProperties("emailInvalid1",XML_DATA_FILE))
                 .fillPasswordField(PropertiesReaderXML.getProperties("mypass",XML_DATA_FILE))
-                .clickByLoginButtonUsingLoginResult();
-        if(!loginResult.isSuccess()){
-            loginResult.getErrorMessage().equals(INVALID_LOGIN_MESSAGE);
+                 .clickLoginButtonUsingRegistrationResult();
+        if(!registrationResult.isSuccess()){
+            registrationResult.getErrorMessage().equals(INVALID_LOGIN_MESSAGE);
         }else {
-            ContactListScreen contactListScreen = loginResult.getContactListScreen();
+            ContactListScreen contactListScreen = registrationResult.getContactListScreen();
         }
+        Assert.assertTrue(registrationResult.getErrorMessage().equals(INVALID_LOGIN_MESSAGE));
     }
-
-
-
 
 }

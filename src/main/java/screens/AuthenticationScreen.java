@@ -30,10 +30,10 @@ public class AuthenticationScreen extends BaseScreen implements TestHelper {
     @FindBy(id = "com.sheygam.contactapp:id/loginBtn")
     MobileElement loginButton;
 
-    @FindBy(id = "com.sheygam.contactapp:id/message")
+    @FindBy(id = "android:id/message")
     MobileElement errorText;
 
-    @FindBy(id = "com.sheygam.contactapp:id/button1")
+    @FindBy(id = "android:id/button1")
     MobileElement errorOkButton;
 
 
@@ -96,9 +96,14 @@ public class AuthenticationScreen extends BaseScreen implements TestHelper {
         }
     }
 
-
-    public RegistrationResult clickByRegistrationButtonUsingRegistrationResult() {
-        registrationButton.click();
+    public RegistrationResult clickLoginButtonUsingRegistrationResult(){
+        return  clickButtonUsingRegistrationResult(loginButton);
+    }
+    public RegistrationResult clickRegistrationButtonUsingRegistrationResult(){
+        return  clickButtonUsingRegistrationResult(registrationButton);
+    }
+    public RegistrationResult clickButtonUsingRegistrationResult(MobileElement button) {
+        button.click();
         String msg = null;
         List<MobileElement> errorTitle = driver.findElements(By.id("android:id/alertTitle"));
         if (errorTitle.size() > 0) {
@@ -114,22 +119,6 @@ public class AuthenticationScreen extends BaseScreen implements TestHelper {
         }
     }
 
-    public LoginResult clickByLoginButtonUsingLoginResult() {
-        loginButton.click();
-        String msg = null;
-        List<MobileElement> errorTitle = driver.findElements(By.id("android:id/alertTitle"));
-        if (errorTitle.size() > 0) {
-            List<MobileElement> errorMessage = driver.findElements(By.id("android:id/message"));
-            if (errorMessage.size() > 0) {
-                msg = errorMessage.get(0).getText();
-            } else {
-                msg = errorTitle.get(0).getText();
-            }
-            return new LoginResult(false, msg, null);
-        } else {
-            return new LoginResult(true, null, new ContactListScreen(driver));
-        }
-    }
 
 
     public boolean isErrorMessagePresent(){

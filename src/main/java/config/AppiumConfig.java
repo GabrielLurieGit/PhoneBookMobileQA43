@@ -21,7 +21,7 @@ public class AppiumConfig {
     capabilities.setCapability("deviceName","emulator-5554"); //Pix6
     capabilities.setCapability("platformVersion","8.0");
     capabilities.setCapability("appPackage","com.sheygam.contactapp");
-    capabilities.setCapability("appActivity",".SplashActivity");
+    capabilities.setCapability("appActivity","SplashActivity");
     capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"Appium");
     capabilities.setCapability(MobileCapabilityType.APP,"C:\\Users\\tocda\\Tools\\apks\\contacts-android.apk");
     driver = new AppiumDriver<MobileElement>(new URL("http://localhost:4723/wd/hub"),capabilities);

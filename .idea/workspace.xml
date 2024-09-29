@@ -5,13 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2a8ff69-0da4-4f8c-981f-f8b6139db935" name="Changes" comment="mobile phonebook new methods">
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/LoginResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/enums/ContactField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/ContactGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/Contact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/screens/AddNewContactScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/AddNewContactsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/EditContactTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/AppiumConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/AppiumConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/AuthenticationScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/AuthenticationScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/BaseScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/BaseScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/ContactListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/ContactListScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/SplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/SplashScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/RegistrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RegistrationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SplashScreenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SplashScreenTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +65,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -74,45 +83,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.AuthenticationTests.loginNegativeTest.executor": "Run",
-    "Gradle.AuthenticationTests.regWOPassword.executor": "Run",
-    "Gradle.AuthenticationTests.regWOPasswordUsingAppState.executor": "Run",
-    "Gradle.AuthenticationTests.registrationPositiveTest.executor": "Run",
-    "Gradle.AuthenticationTests.wrongEmailRegistration.executor": "Run",
-    "Gradle.LoginTests.invalidLogin2.executor": "Run",
-    "Gradle.LoginTests.loginNegativeInvalidEmail.executor": "Run",
-    "Gradle.LoginTests.loginNegativeWOPassword.executor": "Run",
-    "Gradle.LoginTests.loginPositive.executor": "Run",
-    "Gradle.RegistrationTests.regWOPassword.executor": "Run",
-    "Gradle.RegistrationTests.regWOPasswordUsingAppState.executor": "Run",
-    "Gradle.RegistrationTests.registrationPositiveTest.executor": "Run",
-    "Gradle.SplashScreenTest.firstLaunch.executor": "Run",
-    "Gradle.SplashScreenTest.positiveLogin.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/PROJECTS/QA43/QA_43_Trello",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.AddNewContactsTest.AddNewContactNegative.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AddNewContactsTest.AddNewContactNegativeUsingRegistrationResult.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AddNewContactsTest.addNewContactPositive.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuthenticationTests.loginNegativeTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuthenticationTests.regWOPassword.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuthenticationTests.regWOPasswordUsingAppState.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuthenticationTests.registrationPositiveTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuthenticationTests.wrongEmailRegistration.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.EditContactTests.editContactTestPositive.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.invalidLogin2.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.loginNegativeInvalidEmail.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.loginNegativeTry.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.loginNegativeWOPassword.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.loginPositive.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.regWOPassword.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.regWOPasswordUsingAppState.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.registrationPositiveTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SplashScreenTest.firstLaunch.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SplashScreenTest.positiveLogin.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SplashScreenTest.splashScreenTime.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/PROJECTS/QA43/PhoneBookMobileQA43&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\PROJECTS\QA43\PhoneBookMobileQA43\src\main\resources" />
       <recent name="C:\PROJECTS\QA43\PhoneBookMobileQA43\src\main\java\helpers" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.LoginTests.invalidLogin2">
-    <configuration name="LoginTests.invalidLogin2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.AddNewContactsTest.AddNewContactNegativeUsingRegistrationResult">
+    <configuration name="AddNewContactsTest.AddNewContactNegative" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -125,7 +140,55 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;LoginTests.invalidLogin2&quot;" />
+            <option value="&quot;AddNewContactsTest.AddNewContactNegative&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="AddNewContactsTest.AddNewContactNegativeUsingRegistrationResult" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;AddNewContactsTest.AddNewContactNegativeUsingRegistrationResult&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="AddNewContactsTest.addNewContactPositive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;AddNewContactsTest.addNewContactPositive&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -160,7 +223,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LoginTests.loginNegativeWOPassword" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LoginTests.loginPositive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -173,7 +236,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;LoginTests.loginNegativeWOPassword&quot;" />
+            <option value="&quot;LoginTests.loginPositive&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -183,75 +246,14 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>true</RunAsTest>
       <method v="2" />
-    </configuration>
-    <configuration name="RegistrationTests.regWOPasswordUsingAppState" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;RegistrationTests.regWOPasswordUsingAppState&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="RegistrationTests.registrationPositiveTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;RegistrationTests.registrationPositiveTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="PhoneBookMobileQA43" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="PhoneBookMobileQA43" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LoginTests.invalidLogin2" />
-        <item itemvalue="Gradle.RegistrationTests.regWOPasswordUsingAppState" />
+        <item itemvalue="Gradle.AddNewContactsTest.AddNewContactNegativeUsingRegistrationResult" />
+        <item itemvalue="Gradle.LoginTests.loginPositive" />
+        <item itemvalue="Gradle.AddNewContactsTest.addNewContactPositive" />
         <item itemvalue="Gradle.LoginTests.loginNegativeInvalidEmail" />
-        <item itemvalue="Gradle.LoginTests.loginNegativeWOPassword" />
-        <item itemvalue="Gradle.RegistrationTests.registrationPositiveTest" />
+        <item itemvalue="Gradle.AddNewContactsTest.AddNewContactNegative" />
       </list>
     </recent_temporary>
   </component>
