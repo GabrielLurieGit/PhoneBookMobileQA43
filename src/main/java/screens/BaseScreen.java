@@ -3,6 +3,8 @@ package screens;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import models.RegistrationResult;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.PageFactory;
@@ -11,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class BaseScreen {
     AppiumDriver<MobileElement> driver;
@@ -40,6 +43,24 @@ public class BaseScreen {
             return true;
         }catch (TimeoutException e){
             return false;
+        }
+    }
+
+
+    public RegistrationResult createContactUsingRegistrationResult(MobileElement button) {
+        button.click();
+        String msg = null;
+        List<MobileElement> errorTitle = driver.findElements(By.id("android:id/alertTitle"));
+        if (errorTitle.size() > 0) {
+            List<MobileElement> errorMessage = driver.findElements(By.id("android:id/message"));
+            if (errorMessage.size() > 0) {
+                msg = errorMessage.get(0).getText();
+            } else {
+                msg = errorTitle.get(0).getText();
+            }
+            return new RegistrationResult(false, msg, null);
+        } else {
+            return new RegistrationResult(true, null, new ContactListScreen(driver));
         }
     }
 

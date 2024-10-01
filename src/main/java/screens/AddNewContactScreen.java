@@ -51,6 +51,14 @@ public class AddNewContactScreen extends BaseScreen{
     }
 
 
+    public MobileElement getCreateButton(){
+        return  createButton;
+    }
+
+    public RegistrationResult clickCreateButton(){
+       return createContactUsingRegistrationResult(getCreateButton());
+    }
+
     public <T extends BaseScreen> T createContact(){
         createButton.click();
         List<MobileElement> list = driver.findElements(By.id("android:id/alertTitle"));

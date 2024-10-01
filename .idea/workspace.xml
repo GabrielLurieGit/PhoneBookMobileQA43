@@ -4,22 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2a8ff69-0da4-4f8c-981f-f8b6139db935" name="Changes" comment="mobile phonebook new methods">
-      <change afterPath="$PROJECT_DIR$/src/main/java/enums/ContactField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/helpers/ContactGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/Contact.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/screens/AddNewContactScreen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/AddNewContactsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/EditContactTests.java" afterDir="false" />
+    <list default="true" id="b2a8ff69-0da4-4f8c-981f-f8b6139db935" name="Changes" comment="mobile phonebook RegistrationResult AddNewContactScreen">
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/CatFeeder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/CatFeedingException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/screens/EditContactScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/screens/ViewContactScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/config/AppiumConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/AppiumConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/screens/AddNewContactScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/AddNewContactScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/AuthenticationScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/AuthenticationScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/BaseScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/BaseScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/ContactListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/ContactListScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/SplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/SplashScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/RegistrationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RegistrationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SplashScreenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SplashScreenTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AddNewContactsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AddNewContactsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/EditContactTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EditContactTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +97,7 @@
     &quot;Gradle.LoginTests.loginNegativeTry.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.LoginTests.loginNegativeWOPassword.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.LoginTests.loginPositive.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PhoneBookMobileQA43 [:CatFeeder.main()].executor&quot;: &quot;Run&quot;,
     &quot;Gradle.RegistrationTests.regWOPassword.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.RegistrationTests.regWOPasswordUsingAppState.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.RegistrationTests.registrationPositiveTest.executor&quot;: &quot;Run&quot;,
@@ -126,30 +124,19 @@
       <recent name="C:\PROJECTS\QA43\PhoneBookMobileQA43\src\main\java\helpers" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AddNewContactsTest.AddNewContactNegativeUsingRegistrationResult">
-    <configuration name="AddNewContactsTest.AddNewContactNegative" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;AddNewContactsTest.AddNewContactNegative&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
+  <component name="RunManager" selected="Application.CatFeeder">
+    <configuration name="CatFeeder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exceptions.CatFeeder" />
+      <module name="PhoneBookMobileQA43.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exceptions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="AddNewContactsTest.AddNewContactNegativeUsingRegistrationResult" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -199,7 +186,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LoginTests.loginNegativeInvalidEmail" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="EditContactTests.editContactTestPositive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -212,7 +199,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;LoginTests.loginNegativeInvalidEmail&quot;" />
+            <option value="&quot;EditContactTests.editContactTestPositive&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -249,11 +236,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CatFeeder" />
+        <item itemvalue="Gradle.EditContactTests.editContactTestPositive" />
         <item itemvalue="Gradle.AddNewContactsTest.AddNewContactNegativeUsingRegistrationResult" />
         <item itemvalue="Gradle.LoginTests.loginPositive" />
         <item itemvalue="Gradle.AddNewContactsTest.addNewContactPositive" />
-        <item itemvalue="Gradle.LoginTests.loginNegativeInvalidEmail" />
-        <item itemvalue="Gradle.AddNewContactsTest.AddNewContactNegative" />
       </list>
     </recent_temporary>
   </component>
@@ -289,12 +276,21 @@
       <option name="project" value="LOCAL" />
       <updated>1727125221282</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="mobile phonebook RegistrationResult AddNewContactScreen">
+      <option name="closed" value="true" />
+      <created>1727651392511</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727651392511</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="try catch block commentary" />
     <MESSAGE value="mobile phonebook new methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="mobile phonebook new methods" />
+    <MESSAGE value="mobile phonebook RegistrationResult AddNewContactScreen" />
+    <option name="LAST_COMMIT_MESSAGE" value="mobile phonebook RegistrationResult AddNewContactScreen" />
   </component>
 </project>

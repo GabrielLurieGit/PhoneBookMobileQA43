@@ -102,6 +102,7 @@ public class AuthenticationScreen extends BaseScreen implements TestHelper {
     public RegistrationResult clickRegistrationButtonUsingRegistrationResult(){
         return  clickButtonUsingRegistrationResult(registrationButton);
     }
+
     public RegistrationResult clickButtonUsingRegistrationResult(MobileElement button) {
         button.click();
         String msg = null;

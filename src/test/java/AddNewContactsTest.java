@@ -63,4 +63,21 @@ public class AddNewContactsTest extends AppiumConfig implements TestHelper {
              }
              Assert.assertTrue(registrationResult.getErrorMessage().contains("must be a well-formed email"));
     }
+
+
+    @Test
+    public void addNewContactApproach2() throws InterruptedException {
+        Contact contact = ContactGenerator.createValidContact();
+        new SplashScreen(driver).switchAuthenticationScreen()
+                .fillEmailField(PropertiesReaderXML.getProperties("myuser",XML_DATA_FILE))
+                .fillPasswordField(PropertiesReaderXML.getProperties("mypass",XML_DATA_FILE))
+                .clickLoginButtonUsingRegistrationResult();
+        RegistrationResult registrationResult = new ContactListScreen(driver)
+                .openNewForm()
+                .fillNewContactForm(contact)
+                .clickCreateButton();
+        ContactListScreen contactListScreen = registrationResult.getContactListScreen();
+        contactListScreen.clickOnContact(contact.getName(),contact.getPhone());
+        Thread.sleep(3000);
+    }
 }
