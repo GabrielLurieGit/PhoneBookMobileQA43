@@ -7,6 +7,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -35,4 +38,43 @@ public class AppiumConfig {
             driver.quit();
         }
     }
+
+
+    public void switchDataAndWiFi(boolean value) throws IOException, InterruptedException {
+    String[]mobiledata = {"adb","shell","svc","data", value ? "enable":"disable"};
+    String[]wifidata = {"adb","shell","svc","wifi", value ? "enable":"disable"};
+    executeCommand(mobiledata);
+    executeCommand(wifidata);
+    }
+
+    //******************WiFi and DATA***********************
+    public void executeCommand(String[] command) throws IOException, InterruptedException {
+    ProcessBuilder processBuilder = new ProcessBuilder(command);
+    Process process = processBuilder.start();
+    process.waitFor();
+    try( BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+       String line;
+       while((line = reader.readLine()) != null){
+           System.out.println(line);
+       }
+    }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

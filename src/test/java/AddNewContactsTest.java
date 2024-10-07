@@ -12,11 +12,17 @@ import screens.AddNewContactScreen;
 import screens.ContactListScreen;
 import screens.SplashScreen;
 
+import java.io.IOException;
+
 public class AddNewContactsTest extends AppiumConfig implements TestHelper {
 
     @Test
-    public void addNewContactPositive() {
+    public void addNewContactPositive() throws IOException, InterruptedException {
+        switchDataAndWiFi(false);
+        Thread.sleep(7000);
         Contact contact = ContactGenerator.createValidContact();
+
+
         new SplashScreen(driver).switchAuthenticationScreen()
                 .fillEmailField(PropertiesReaderXML.getProperties("myuser",XML_DATA_FILE))
                 .fillPasswordField(PropertiesReaderXML.getProperties("mypass",XML_DATA_FILE))
@@ -79,5 +85,15 @@ public class AddNewContactsTest extends AppiumConfig implements TestHelper {
         ContactListScreen contactListScreen = registrationResult.getContactListScreen();
         contactListScreen.clickOnContact(contact.getName(),contact.getPhone());
         Thread.sleep(3000);
+    }
+
+
+    @Test
+    public void addMultipleContacts(){
+        new SplashScreen(driver).switchAuthenticationScreen()
+                .fillEmailField(PropertiesReaderXML.getProperties("myuser",XML_DATA_FILE))
+                .fillPasswordField(PropertiesReaderXML.getProperties("mypass",XML_DATA_FILE))
+                .clickLoginButtonUsingRegistrationResult();
+       new ContactListScreen(driver).addContacts(5);
     }
 }

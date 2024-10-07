@@ -3,6 +3,7 @@ package screens;
 import enums.ContactField;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import models.Contact;
 import org.openqa.selenium.support.FindBy;
 
 public class EditContactScreen extends BaseScreen{
@@ -49,6 +50,7 @@ public class EditContactScreen extends BaseScreen{
         }
 
     }
+
 
 
 
