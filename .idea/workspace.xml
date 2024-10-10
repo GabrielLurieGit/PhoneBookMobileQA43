@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2a8ff69-0da4-4f8c-981f-f8b6139db935" name="Changes" comment="mobile phonebook edit contact">
-      <change afterPath="$PROJECT_DIR$/src/main/java/enums/Directions.java" afterDir="false" />
+    <list default="true" id="b2a8ff69-0da4-4f8c-981f-f8b6139db935" name="Changes" comment="mobile phonebook delete contact,using directions">
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/InternetManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/BirdPoopException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/RainException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/WeddingPreparation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/ContactListModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/ApiUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config/AppiumConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/AppiumConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/screens/ContactListScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/ContactListScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/screens/EditContactScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/screens/EditContactScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/AddNewContactsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AddNewContactsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/EditContactTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EditContactTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,56 +78,61 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.AddNewContactsTest.AddNewContactNegative.executor": "Run",
-    "Gradle.AddNewContactsTest.AddNewContactNegativeUsingRegistrationResult.executor": "Run",
-    "Gradle.AddNewContactsTest.addMultipleContacts.executor": "Run",
-    "Gradle.AddNewContactsTest.addNewContactPositive.executor": "Run",
-    "Gradle.AuthenticationTests.loginNegativeTest.executor": "Run",
-    "Gradle.AuthenticationTests.regWOPassword.executor": "Run",
-    "Gradle.AuthenticationTests.regWOPasswordUsingAppState.executor": "Run",
-    "Gradle.AuthenticationTests.registrationPositiveTest.executor": "Run",
-    "Gradle.AuthenticationTests.wrongEmailRegistration.executor": "Run",
-    "Gradle.EditContactTests.addContactAndCheckTheList.executor": "Run",
-    "Gradle.EditContactTests.editContactTestPositive.executor": "Run",
-    "Gradle.EditContactTests.editeOrRemoveContact.executor": "Run",
-    "Gradle.LoginTests.invalidLogin2.executor": "Run",
-    "Gradle.LoginTests.loginNegativeInvalidEmail.executor": "Run",
-    "Gradle.LoginTests.loginNegativeTry.executor": "Run",
-    "Gradle.LoginTests.loginNegativeWOPassword.executor": "Run",
-    "Gradle.LoginTests.loginPositive.executor": "Run",
-    "Gradle.PhoneBookMobileQA43 [:CatFeeder.main()].executor": "Run",
-    "Gradle.RegistrationTests.regWOPassword.executor": "Run",
-    "Gradle.RegistrationTests.regWOPasswordUsingAppState.executor": "Run",
-    "Gradle.RegistrationTests.registrationPositiveTest.executor": "Run",
-    "Gradle.SplashScreenTest.firstLaunch.executor": "Run",
-    "Gradle.SplashScreenTest.positiveLogin.executor": "Run",
-    "Gradle.SplashScreenTest.splashScreenTime.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/PROJECTS/QA43/PhoneBookMobileQA43",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "advanced.settings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.AddNewContactsTest.AddNewContactNegative.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AddNewContactsTest.AddNewContactNegativeUsingRegistrationResult.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AddNewContactsTest.addMultipleContacts.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AddNewContactsTest.addNewContactPositive.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuthenticationTests.loginNegativeTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuthenticationTests.regWOPassword.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuthenticationTests.regWOPasswordUsingAppState.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuthenticationTests.registrationPositiveTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AuthenticationTests.wrongEmailRegistration.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.EditContactTests.addContactAndCheckTheList.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.EditContactTests.editContactTestPositive.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.EditContactTests.editeOrRemoveContact.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.invalidLogin2.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.loginNegativeInvalidEmail.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.loginNegativeTry.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.loginNegativeWOPassword.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.LoginTests.loginPositive.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PhoneBookMobileQA43 [:CatFeeder.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PhoneBookMobileQA43 [:WeddingPreparation.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.regWOPassword.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.regWOPasswordUsingAppState.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RegistrationTests.registrationPositiveTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SplashScreenTest.firstLaunch.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SplashScreenTest.positiveLogin.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.SplashScreenTest.splashScreenTime.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/PROJECTS/QA43/PhoneBookMobileQA43&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\PROJECTS\QA43\PhoneBookMobileQA43\src\main\resources" />
       <recent name="C:\PROJECTS\QA43\PhoneBookMobileQA43\src\main\java\helpers" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="models" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.AddNewContactsTest.addNewContactPositive">
-    <configuration name="CatFeeder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="exceptions.CatFeeder" />
+  <component name="RunManager" selected="Gradle.EditContactTests.editeOrRemoveContact">
+    <configuration name="WeddingPreparation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exceptions.WeddingPreparation" />
       <module name="PhoneBookMobileQA43.main" />
       <extension name="coverage">
         <pattern>
@@ -135,30 +143,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="AddNewContactsTest.addMultipleContacts" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;AddNewContactsTest.addMultipleContacts&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
     </configuration>
     <configuration name="AddNewContactsTest.addNewContactPositive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -208,6 +192,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="EditContactTests.editContactTestPositive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;EditContactTests.editContactTestPositive&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="EditContactTests.editeOrRemoveContact" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -234,11 +242,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.AddNewContactsTest.addNewContactPositive" />
         <item itemvalue="Gradle.EditContactTests.editeOrRemoveContact" />
+        <item itemvalue="Application.WeddingPreparation" />
+        <item itemvalue="Gradle.EditContactTests.editContactTestPositive" />
         <item itemvalue="Gradle.EditContactTests.addContactAndCheckTheList" />
-        <item itemvalue="Gradle.AddNewContactsTest.addMultipleContacts" />
-        <item itemvalue="Application.CatFeeder" />
+        <item itemvalue="Gradle.AddNewContactsTest.addNewContactPositive" />
       </list>
     </recent_temporary>
   </component>
@@ -290,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727777061704</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="mobile phonebook delete contact,using directions">
+      <option name="closed" value="true" />
+      <created>1728334482416</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1728334482416</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -298,6 +314,7 @@
     <MESSAGE value="mobile phonebook new methods" />
     <MESSAGE value="mobile phonebook RegistrationResult AddNewContactScreen" />
     <MESSAGE value="mobile phonebook edit contact" />
-    <option name="LAST_COMMIT_MESSAGE" value="mobile phonebook edit contact" />
+    <MESSAGE value="mobile phonebook delete contact,using directions" />
+    <option name="LAST_COMMIT_MESSAGE" value="mobile phonebook delete contact,using directions" />
   </component>
 </project>

@@ -1,4 +1,5 @@
 import config.AppiumConfig;
+import config.InternetManager;
 import enums.ContactField;
 import enums.Directions;
 import helpers.ContactGenerator;
@@ -11,9 +12,13 @@ import screens.ContactListScreen;
 import screens.EditContactScreen;
 import screens.SplashScreen;
 
+import java.io.IOException;
+
 public class EditContactTests extends AppiumConfig implements TestHelper {
     @Test
     public void editContactTestPositive(){
+        InternetManager internetManager = new InternetManager();
+
         String modifiedFieldValue = "mynewemail@gmail.com";
         Contact contact = ContactGenerator.createValidContact();
         new SplashScreen(driver).switchAuthenticationScreen()
@@ -35,7 +40,6 @@ public class EditContactTests extends AppiumConfig implements TestHelper {
 
     @Test
     public void addContactAndCheckTheList(){
-        String modifiedFieldValue = "mynewemail@gmail.com";
         Contact contact = ContactGenerator.createValidContact();
         new SplashScreen(driver).switchAuthenticationScreen()
                 .fillEmailField(PropertiesReaderXML.getProperties("myuser",XML_DATA_FILE))
@@ -49,7 +53,8 @@ public class EditContactTests extends AppiumConfig implements TestHelper {
     }
 
     @Test
-    public void editeOrRemoveContact() {
+    public void editeOrRemoveContact() throws IOException, InterruptedException {
+        InternetManager internetManager = new InternetManager();
         Contact contact = ContactGenerator.createValidContact();
         new SplashScreen(driver).switchAuthenticationScreen()
                 .fillEmailField(PropertiesReaderXML.getProperties("myuser",XML_DATA_FILE))
@@ -59,8 +64,10 @@ public class EditContactTests extends AppiumConfig implements TestHelper {
                 .openNewForm()
                 .fillNewContactForm(contact)
                 .createContact();
-      EditContactScreen editContactScreen = contactListScreen.swipeAndActOnContact(contact, Directions.RIGHT);
-      editContactScreen.editField(ContactField.EMAIL,"modifidField@gmail.com");
+        internetManager.cpuUsage();
+        internetManager.memoryMonitoring();
+        contactListScreen.swipeAndActOnContact(contact, Directions.RIGHT);
+     // editContactScreen.editField(ContactField.EMAIL,"modifidField@gmail.com");
     }
 
 }

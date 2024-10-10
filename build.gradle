@@ -14,7 +14,13 @@ dependencies {
     testImplementation group: 'org.testng', name: 'testng', version: '7.5.1'
     implementation group: 'org.testng', name: 'testng', version: '7.5.1'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+
+    testImplementation group: 'io.rest-assured', name: 'rest-assured', version: '5.3.0'
+
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '5.3.0'
+
     implementation group: 'io.appium', name: 'java-client', version: '7.6.0'
+
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
     annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.30'
     implementation group: 'ru.yandex.qatools.ashot', name: 'ashot', version: '1.5.4'
@@ -24,6 +30,5 @@ dependencies {
 
 test {
     useTestNG()
-
     jvmArgs '--add-opens','java.base/java.lang=ALL-UNNAMED'
 }

@@ -77,9 +77,8 @@ public class ContactListScreen extends BaseScreen{
         }
 
 
-
+// ***********Swiping***************
         public EditContactScreen editMyContact(int index){
-        waitForElement(addButton);
         MobileElement contact = contacts.get(0);
             Rectangle rectangle = contact.getRect();
             int xStart = rectangle.getX()+rectangle.getWidth()/8;
@@ -92,6 +91,7 @@ public class ContactListScreen extends BaseScreen{
                      .perform();
              return new EditContactScreen(driver);
         }
+
 
 
     public boolean isContactModified(String text,int index){
@@ -121,8 +121,10 @@ public class ContactListScreen extends BaseScreen{
 
     private boolean isThisTheEndOfTheList(){
         String beforeScrolling = getLastContact();
+     //   System.out.println("Contact before scroll ->"+ beforeScrolling);
         scrolling();
         String afterScrolling = getLastContact();
+     //   System.out.println("Contact after scroll ->"+afterScrolling);
        return beforeScrolling.equals(afterScrolling);
     }
 
@@ -147,7 +149,7 @@ public class ContactListScreen extends BaseScreen{
         }
         MobileElement contactElement = contacts.get(index);
         Rectangle rectangle = contactElement.getRect();
-        int startX = rectangle.getX() + rectangle.getWidth()/3; //4
+        int startX = rectangle.getX() + rectangle.getWidth()/4; //4
         int y = rectangle.getY()+ rectangle.getHeight()/2;
         int endX = startX + rectangle.getWidth()*6/8;
         endX = Math.min(endX, rectangle.getX()+ rectangle.getWidth()-1);
@@ -174,7 +176,9 @@ public class ContactListScreen extends BaseScreen{
 
     private int findContactWithScroll(Contact contact){
         scrolling();
-        int index = getContactIndex(contact);
+//        int index = getContactIndex(contact);
+//        System.out.println("index - " + index);
+        int index = -1;
         while (index == -1 && !isThisTheEndOfTheList()){
             scrolling();
             index = getContactIndex(contact);
@@ -188,10 +192,11 @@ public class ContactListScreen extends BaseScreen{
         }
         for (int i = 0; i< rowName.size();i++){
             if (i >=rowPhone.size()){
-                break;
+               break;
             }
             if (rowName.get(i).getText().contains(contact.getName()) &&
                     rowPhone.get(i).getText().contains(contact.getPhone())){
+              //  System.out.println("index = "+i);
                 return i;
             }
         }
@@ -210,6 +215,8 @@ public class ContactListScreen extends BaseScreen{
         }
         return this;
     }
+
+
 
 
 
